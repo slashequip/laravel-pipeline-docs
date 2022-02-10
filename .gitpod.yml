@@ -2,8 +2,10 @@ image: gitpod/workspace-full
 
 ports:
   - port: 8080
-    onOpen: open-browser
+    onOpen: ignore
 
 tasks:
-  - name: Install deps
-    init:  composer install
+  - name: Install deps & compile
+    init:  |
+      npm install
+      npm run docs:dev
