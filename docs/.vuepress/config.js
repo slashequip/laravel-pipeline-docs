@@ -8,5 +8,20 @@ module.exports = {
     theme: '@vuepress/theme-default',
     themeConfig: {
       logo: 'https://vuejs.org/images/logo.png',
+      sidebar: [
+          {
+            text: "Getting Started",
+            children: [
+                {
+                    text: "Introduction",
+                    link: "/"
+                },
+                {
+                    text: "Installation",
+                    link: "/installation"
+                }
+            ],
+          }
+      ],
     },
   }
