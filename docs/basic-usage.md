@@ -18,7 +18,7 @@ example is to help you understand what Laravel Pipeline can do for you
 ```php
 namespace App\Http\Controllers;
 
-use Illuminate
+use Illuminate\Http\Request;
 
 class RegisterUserController
 {
