@@ -19,7 +19,20 @@ module.exports = {
                 {
                     text: "Installation",
                     link: "/installation"
+                },
+                {
+                    text: "Basic usage",
+                    link: "/basic-usage"
                 }
+            ],
+          },
+          {
+            text: "Learn with examples",
+            children: [
+                {
+                    text: "Order processing",
+                    link: "/examples/order-processing"
+                },
             ],
           }
       ],
