@@ -3,7 +3,7 @@
 To use a Pipeline all you need is a `Transport` and some `Pipes`.
 
 The Transport is the object that gets passed down the Pipeline and through the Pipes. This Transport object is the
-source of truth for you Pipeline, it gets manipulated or shaped by the Pipes it passes through.
+source of truth for your Pipeline, it gets manipulated or shaped by the Pipes it passes through. Think of it like a smart value object.
 
 The Pipes are small, encapsulated pieces of logic that should do _one job_ they can use data from the Transport
 and they can manipulate or set data on the Transport too.
@@ -15,7 +15,8 @@ Pipeline thrives in complex environments and for something simple like user regi
 example is to help you understand what Laravel Pipeline can do for you
 :::
 
-Let's start with the controller, generally your application will have three entry points, controllers, jobs and commands. These entry points are the best place to make use of pipelines. Even in this overly simple example you get to see how breaking up the code into Pipes you create a lot more readability.
+### Firing up the pipeline
+Let's start with the controller, generally your application will have three entry points, controllers, jobs and commands. These entry points are the best place to make use of pipelines. Even in this overly simple example you get to see how breaking up the code into pipes creates a lot more readability of code and logic within.
 
 ```php
 namespace App\Http\Controllers;
@@ -47,7 +48,13 @@ class RegisterUserController
 }
 ```
 
-Next we have the Transport the Transport is the object that holds all the data for you allowing data to be added, updated and removed as it travels through the Pipes. It will be the one constant for your Pipes to refer back to and determine state.
+### Something to send through the pipeline
+Next we have the Transport, the Transport is the object that holds all the data for you allowing data to be added, updated and removed as it travels through the Pipes. It will be the one constant for your Pipes to refer back to and determine state.
+
+:::tip Note
+In the example below we extend the `SimpleTransport` provided by the Laravel Pipeline package, it doesn't do anything
+apart from implement some of the required methods from the `Transport` contract. You should use it! 😇
+:::
 
 ```php
 namespace App\Transport;
@@ -83,16 +90,20 @@ class UserRegistrationTransport extends SimpleTransport;
 }
 ```
 
-Now the Pipes!
+### The pipes themselves
+Below you can see each of the pipes, each with it's own broken down, encapsulated logic, making it super simple to determine what is happening and when.
+
+You can see even in these simple pipes that getters and setters on the transport it's self play a really important role in allowing the flow of data between pipes.
 
 ```php
 namespace App\Pipes;
 
 use Slashequip\LaravelPipeline\Contracts\Transport;
+use Slashequip\LaravelPipeline\Contracts\Pipe;
 use App\Transport\UserRegistrationTransport;
 use App\Models\User;
 
-class CreateUser
+class CreateUser implements Pipe
 {
     /**
      * @param UserRegistrationTransport $transport
