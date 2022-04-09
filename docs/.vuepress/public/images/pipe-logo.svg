@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="156px" height="109px" viewBox="0 0 156 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <path d="M47.612,54.494 C47.612,26.931 68.102,4.209 94.669,0.58 C74.336,3.097 35.576,13.204 33.057,13.755 C14.321,17.845 0.294,34.531 0.294,54.494 C0.294,74.082 13.801,90.516 32.009,94.99 C34.809,95.678 74.192,105.876 94.661,108.406 C68.098,104.774 47.612,82.053 47.612,54.494" id="Fill-12" fill="#F9322B"></path>
+            <path d="M102.09,12.795 C90.479,12.795 79.985,17.549 72.424,25.206 C79.53,32.921 83.915,43.179 83.915,54.494 C83.915,65.808 79.53,76.067 72.425,83.782 C79.985,91.439 90.479,96.192 102.09,96.192 C125.12,96.192 143.789,77.523 143.789,54.494 C143.789,31.464 125.12,12.795 102.09,12.795" id="Fill-13" fill="#FA8B88"></path>
+            <circle id="Oval" stroke="#FEE1E1" stroke-width="14" cx="101.5" cy="54.5" r="47.5"></circle>
+        </g>
+    </g>
+</svg>

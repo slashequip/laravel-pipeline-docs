@@ -11,6 +11,12 @@ You can then begin to use the pipeline in your codebase
 ```php
 use SlashEquip\LaravelPipeline\Pipeline;
 use Illuminate\Http\Request;
+use App\Transports\NewUserTransporter;
+use App\Pipes\StoreNewUser;
+use App\Pipes\SendNewUserNotification;
+use App\Pipes\AddNewUserToIntercom;
+use App\Pipes\AddNewUserToOnboardingCampaign;
+use App\Http\Resources\UserResource;
 
 class CreateNewUserController
 {
@@ -22,10 +28,10 @@ class CreateNewUserController
         Pipeline::make()
             ->send($transport)
             ->through(
-                StoreNewUser::make(),
-                SendNewUserNotification::make(),
-                AddNewUserToIntercom::make(),
-                AddNewUserToOnboardingCampaign::make(),
+                new StoreNewUser(),
+                new SendNewUserNotification(),
+                new AddNewUserToIntercom(),
+                new AddNewUserToOnboardingCampaign(),
             )
             ->deliver();
 

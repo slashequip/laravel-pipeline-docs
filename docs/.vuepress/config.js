@@ -7,7 +7,7 @@ module.exports = {
     // theme and its config
     theme: '@vuepress/theme-default',
     themeConfig: {
-      logo: 'https://vuejs.org/images/logo.png',
+      logo: '/images/pipe-logo.svg',
       sidebar: [
           {
             text: "Getting Started",
