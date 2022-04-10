@@ -28,11 +28,40 @@ module.exports = {
           },
           {
             text: "Learn with examples",
+            collapsible: true,
             children: [
                 {
                     text: "Order processing",
                     link: "/examples/order-processing"
                 },
+            ],
+          },
+          {
+            text: "Pipes",
+            link: "/pipes",
+            collapsible: true,
+            children: [
+                {
+                    text: "Introduction",
+                    link: "/pipes"
+                },
+                {
+                    text: "Anonymous",
+                    link: "/pipes/anonymous"
+                },
+                {
+                    text: "Branching",
+                    link: "/pipes/branching"
+                },
+                {
+                    text: "Quietly",
+                    link: "/pipes/quietly"
+                },
+                {
+                    text: "Teardown",
+                    link: "/pipes/teardown"
+                },
+
             ],
           }
       ],
